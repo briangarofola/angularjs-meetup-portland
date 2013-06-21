@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app ng-init="r=128; g=128; b=128;">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  </head>
+
+  <body>
+    <div style="width: 300px; height: 200px; background-color: rgb({{r}},{{g}},{{b}})"> 
+    </div>
+    <div>
+      <input type="range" step="1" min="0" max="255" ng-model="r"></input>
+      <input type="range" step="1" min="0" max="255" ng-model="g"></input>
+      <input type="range" step="1" min="0" max="255" ng-model="b"></input>
+    </div>
+  </body>
+
+</html>

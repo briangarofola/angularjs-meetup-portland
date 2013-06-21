@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="sample">
+
+  <head>
+    <title>Directive Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script>
+      angular.module('sample', [])
+      .directive('textbox',function(){
+        return{
+          restrict: 'E',
+           controller: function($scope, $attrs, defaultsService){
+             $scope.label = $attrs.label;
+             $scope.name=defaultsService.defaultName;
+           },
+          transclude: true,
+          template: '<div class="wrapper"><label>{{label}}</label><input type="text" ng-model="name"></input></div>'
+        }
+      })
+      .service("defaultsService", function(){
+        this.defaultName = "Jim"
+      })
+      
+    </script>
+  </head>
+
+  <body>
+    <textbox label="First Name"></textbox>
+    <br/>
+    <label>{{name}}</label>
+  </body>
+
+</html>
