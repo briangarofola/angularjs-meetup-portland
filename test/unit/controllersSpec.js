@@ -2,7 +2,7 @@ describe("Unit Tests: GitController", function () {
     
     var controller, scope;
 
-	beforeEach(module("di"));
+	  beforeEach(module("di"));
 
     beforeEach(inject(function ($rootScope, $controller) {
          scope = $rootScope.$new();
@@ -15,10 +15,8 @@ describe("Unit Tests: GitController", function () {
 
     it("should have 3 commits", inject(function($injector){
     	gitService = $injector.get('gitService');
-	    spyOn(gitService,'getCommits').andCallFake(function(){
-	    	return someCommits;
-	    });
-	    scope.fetch();
+      spyOn(gitService,'getCommits').andReturn(someCommits);
+      scope.fetch();
 	    expect(scope.commits.length).toBe(3);
     }));
 
