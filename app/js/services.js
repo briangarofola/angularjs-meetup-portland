@@ -1,9 +1,8 @@
 angular.module('di')
-	.service('gitConfig', function(){ 
-		this.baseUrl =  'https://api.github.com/repos';
-		this.user = 'angular';
-		this.repository = 'angular.js';
-	  	//this.url = 'https://api.github.com/repos/angular/angular.js/commits';
+	.value('gitConfig', {
+		baseUrl: 'https://api.github.com/repos',
+		user: 'angular',
+		repository: 'angular.js'
 	})
 	.service('gitService', function($http, gitConfig){
 	  this.getCommits = function(){

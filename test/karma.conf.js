@@ -6,7 +6,8 @@ files = [
 
   '../app/js/*.js',
 
-  'unit/*Spec.js'
+  'unit/*testData.js',
+  'unit/*Spec.js',
 ];
 
 exclude = ['karma.conf.js'];
