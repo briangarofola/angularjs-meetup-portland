@@ -17,7 +17,7 @@ describe("Unit Tests: GitController", function () {
       var threeCommits = $injector.get('threeCommits');
       spyOn(gitService,'getCommits').andReturn(threeCommits);
       scope.fetch();
-	    expect(scope.commits.length).toBe(3);
+	    expect(scope.commits.length).toBe(threeCommits.length);
     }));
 
 });

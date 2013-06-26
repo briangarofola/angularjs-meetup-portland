@@ -9,22 +9,19 @@
       .directive('textbox',function(){
         return{
           restrict: 'E',
-           controller: function($scope, $attrs, defaultsService){
+           controller: function($scope, $attrs){
              $scope.label = $attrs.label;
-             $scope.name=defaultsService.defaultName;
+             $scope.name = "Brian Garofola";
            },
-          template: '<div class="wrapper"><label>{{label}}</label><input type="text" ng-model="name"></input></div>'
+          template: '<div class="wrapper"><label>{{label}}</label>:<input type="text" ng-model="name"></input></div>'
         }
-      })
-      .service("defaultsService", function(){
-        this.defaultName = "Jim"
       })
       
     </script>
   </head>
 
   <body>
-    <textbox label="First Name"></textbox>
+    <textbox label="Name"></textbox>
     <br/>
     <label>{{name}}</label>
   </body>
