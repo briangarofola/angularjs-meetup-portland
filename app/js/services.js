@@ -11,5 +11,5 @@ angular.module('di')
 		  	return response.data;
 		  });
 		  return promise;
-	  }
+	  };
 	});

@@ -3,5 +3,5 @@ angular.module('di')
 		$scope.commits = [];
 		$scope.fetch = function(){
 	 		$scope.commits = gitService.getCommits();
-		}
+		};
 	});
